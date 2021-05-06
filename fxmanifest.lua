@@ -18,8 +18,7 @@ files {
 }
 
 server_scripts {
-    '@async/async.lua',
-    '@mysql-async/lib/MySQL.lua',
+    'async.lua',
     "sv_mdt.lua",
     "sv_vehcolors.lua"
 }

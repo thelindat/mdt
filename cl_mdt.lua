@@ -212,9 +212,9 @@ end)
 
 RegisterNetEvent("mdt:returnOffenderDetails")
 AddEventHandler("mdt:returnOffenderDetails", function(data)
-    for i = 1, #data.vehicles do
+--[[     for i = 1, #data.vehicles do
         data.vehicles[i].model = GetLabelText(GetDisplayNameFromVehicleModel(data.vehicles[i].model))
-    end
+    end ]]
     SendNUIMessage({
         type = "returnedOffenderDetails",
         details = data
@@ -380,7 +380,7 @@ function getVehicleInFront()
 end
 
 function getVehicleInDirection(coordFrom, coordTo)
-    local rayHandle = CastRayPointToPoint(coordFrom.x, coordFrom.y, coordFrom.z, coordTo.x, coordTo.y, coordTo.z, 10, GetPlayerPed(-1), 0)
+    local rayHandle = CastRayPointToPoint(coordFrom.x, coordFrom.y, coordFrom.z, coordTo.x, coordTo.y, coordTo.z, 10, PlayerPedId(), 0)
     local a, b, c, d, vehicle = GetRaycastResult(rayHandle)
     return vehicle
 end
