@@ -296,7 +296,7 @@ AddEventHandler("mdt:saveOffenderChanges", function(id, changes, identifier)
 		end
 		
 		if changes.licenses_removed then
-			local xPlayer = RLCore.Functions.GetPlayerByCitizenId(citizenid)
+			local xPlayer = QBCore.Functions.GetPlayerByCitizenId(citizenid)
 
 			if xPlayer then
 				local licenses = xPlayer.PlayerData['metadata']['licences']
